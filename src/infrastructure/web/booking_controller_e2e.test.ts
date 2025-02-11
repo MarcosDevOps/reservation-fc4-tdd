@@ -80,8 +80,8 @@ describe("BookingController", () => {
 
     await propertyRepo.save({
       id: "1",
-      name: "Propriedade de Teste",
-      description: "Um lugar incrível para ficar",
+      name: "Casa na Grécia",
+      description: "Vista para o Mediterrâneo",
       maxGuests: 5,
       basePricePerNight: 100,
     });
@@ -92,17 +92,17 @@ describe("BookingController", () => {
     });
   });
 
-  it("deve criar uma reservar com sucesso", async () => {
+  it("deve criar uma reserva com sucesso", async () => {
     const response = await request(app).post("/bookings").send({
       propertyId: "1",
       guestId: "1",
-      startDate: "2024-12-20",
-      endDate: "2024-12-25",
+      startDate: "2025-02-10",
+      endDate: "2025-02-15",
       guestCount: 2,
     });
 
     expect(response.status).toBe(201);
-    expect(response.body.message).toBe("Booking created successfully");
+    expect(response.body.message).toBe("Reserva criada com sucesso");
     expect(response.body.booking).toHaveProperty("id");
     expect(response.body.booking).toHaveProperty("totalPrice");
   });
@@ -112,7 +112,7 @@ describe("BookingController", () => {
       propertyId: "1",
       guestId: "1",
       startDate: "invalid-date",
-      endDate: "2024-12-25",
+      endDate: "2025-02-15",
       guestCount: 2,
     });
 
@@ -124,7 +124,7 @@ describe("BookingController", () => {
     const response = await request(app).post("/bookings").send({
       propertyId: "1",
       guestId: "1",
-      startDate: "2024-12-20",
+      startDate: "2025-02-10",
       endDate: "invalid-date",
       guestCount: 2,
     });
@@ -137,8 +137,8 @@ describe("BookingController", () => {
     const response = await request(app).post("/bookings").send({
       propertyId: "1",
       guestId: "1",
-      startDate: "2024-12-20",
-      endDate: "2024-12-25",
+      startDate: "2025-02-10",
+      endDate: "2025-02-15",
       guestCount: 0,
     });
 
@@ -152,8 +152,8 @@ describe("BookingController", () => {
     const response = await request(app).post("/bookings").send({
       propertyId: "invalid-id",
       guestId: "1",
-      startDate: "2024-12-20",
-      endDate: "2024-12-25",
+      startDate: "2025-02-10",
+      endDate: "2025-02-15",
       guestCount: 2,
     });
 
@@ -165,8 +165,8 @@ describe("BookingController", () => {
     const response = await request(app).post("/bookings").send({
       propertyId: "1",
       guestId: "1",
-      startDate: "2024-12-20",
-      endDate: "2024-12-25",
+      startDate: "2025-02-10",
+      endDate: "2025-02-15",
       guestCount: 2,
     });
 

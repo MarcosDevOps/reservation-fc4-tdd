@@ -37,8 +37,8 @@ describe("TypeORMBookingRepository", () => {
 
     const propertyEntity = propertyRepository.create({
       id: "1",
-      name: "Casa na Praia",
-      description: "Vista para o mar",
+      name: "Casa na Grécia",
+      description: "Vista para o Mediterrâneo",
       maxGuests: 6,
       basePricePerNight: 200,
     });
@@ -46,8 +46,8 @@ describe("TypeORMBookingRepository", () => {
 
     const property = new Property(
       "1",
-      "Casa na Praia",
-      "Vista para o mar",
+      "Casa na Grécia",
+      "Vista para o Mediterrâneo",
       6,
       200
     );
@@ -60,8 +60,8 @@ describe("TypeORMBookingRepository", () => {
 
     const user = new User("1", "Carlos");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2025-02-10"),
+      new Date("2025-02-15")
     );
 
     const booking = new Booking("1", property, user, dateRange, 4);
@@ -86,8 +86,8 @@ describe("TypeORMBookingRepository", () => {
 
     const propertyEntity = propertyRepository.create({
       id: "1",
-      name: "Casa na Praia",
-      description: "Vista para o mar",
+      name: "Casa na Grécia",
+      description: "Vista para o Mediterrâneo",
       maxGuests: 6,
       basePricePerNight: 200,
     });
@@ -95,8 +95,8 @@ describe("TypeORMBookingRepository", () => {
 
     const property = new Property(
       "1",
-      "Casa na Praia",
-      "Vista para o mar",
+      "Casa na Grécia",
+      "Vista para o Mediterrâneo",
       6,
       200
     );
@@ -109,14 +109,14 @@ describe("TypeORMBookingRepository", () => {
 
     const user = new User("1", "Carlos");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2025-02-10"),
+      new Date("2025-02-15")
     );
 
     const booking = new Booking("1", property, user, dateRange, 4);
     await bookingRepository.save(booking);
 
-    booking.cancel(new Date("2024-12-15"));
+    booking.cancel(new Date("2025-02-05"));
     await bookingRepository.save(booking);
 
     const updatedBooking = await bookingRepository.findById("1");

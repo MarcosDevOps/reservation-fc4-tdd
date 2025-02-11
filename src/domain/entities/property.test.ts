@@ -43,8 +43,8 @@ describe("Property Entity", () => {
   it("não deve aplicar desconto para estadias menores que 7 noites", () => {
     const property = new Property("1", "Apartamento", "Descrição", 2, 100);
     const dateRange = new DateRange(
-      new Date("2024-12-10"),
-      new Date("2024-12-16")
+      new Date("2025-02-10"),
+      new Date("2025-02-16")
     );
     const totalPrice = property.calculateTotalPrice(dateRange);
     expect(totalPrice).toBe(600);
@@ -53,8 +53,8 @@ describe("Property Entity", () => {
   it("deve aplicar desconto para estadias de 7 noites ou mais", () => {
     const property = new Property("1", "Apartamento", "Descrição", 2, 100);
     const dateRange = new DateRange(
-      new Date("2024-12-10"),
-      new Date("2024-12-17")
+      new Date("2025-02-10"),
+      new Date("2025-02-17")
     );
     const totalPrice = property.calculateTotalPrice(dateRange);
     expect(totalPrice).toBe(630); // 7 noites * 100 *0.9 = 630
@@ -64,13 +64,13 @@ describe("Property Entity", () => {
     const property = new Property("1", "Apartamento", "Descrição", 4, 200);
     const user = new User("1", "Maria Silva");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2025-02-20"),
+      new Date("2025-02-25")
     );
 
     const dateRange2 = new DateRange(
-      new Date("2024-12-22"),
-      new Date("2024-12-27")
+      new Date("2025-02-22"),
+      new Date("2025-02-27")
     );
 
     new Booking("1", property, user, dateRange, 2);

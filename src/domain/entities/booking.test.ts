@@ -7,8 +7,8 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 100);
     const user = new User("1", "João Silva");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2025-02-10"),
+      new Date("2025-02-15")
     );
 
     const booking = new Booking("1", property, user, dateRange, 2);
@@ -24,8 +24,8 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 5, 150);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-10"),
-      new Date("2024-12-15")
+      new Date("2025-02-10"),
+      new Date("2025-02-15")
     );
 
     expect(() => {
@@ -37,8 +37,8 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 150);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-10"),
-      new Date("2024-12-15")
+      new Date("2025-02-10"),
+      new Date("2025-02-15")
     );
 
     expect(() => {
@@ -51,8 +51,8 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 300);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-01"),
-      new Date("2024-12-10")
+      new Date("2025-02-01"),
+      new Date("2025-02-10")
     );
 
     // Act
@@ -67,13 +67,13 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 300);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-01"),
-      new Date("2024-12-10")
+      new Date("2025-02-01"),
+      new Date("2025-02-10")
     );
     const booking = new Booking("1", property, user, dateRange, 4);
     const dateRange2 = new DateRange(
-      new Date("2024-12-02"),
-      new Date("2024-12-09")
+      new Date("2025-02-02"),
+      new Date("2025-02-09")
     );
 
     expect(() => {
@@ -85,12 +85,12 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 300);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-22")
+      new Date("2025-02-20"),
+      new Date("2025-02-22")
     );
     const booking = new Booking("1", property, user, dateRange, 4);
 
-    const currentDate = new Date("2024-12-20");
+    const currentDate = new Date("2025-02-20");
     booking.cancel(currentDate);
 
     expect(booking.getStatus()).toBe("CANCELLED");
@@ -101,12 +101,12 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 300);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2025-02-20"),
+      new Date("2025-02-25")
     );
     const booking = new Booking("1", property, user, dateRange, 4);
 
-    const currentDate = new Date("2024-12-10");
+    const currentDate = new Date("2025-02-10");
     booking.cancel(currentDate);
 
     expect(booking.getStatus()).toBe("CANCELLED");
@@ -117,12 +117,12 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 300);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2025-02-20"),
+      new Date("2025-02-25")
     );
     const booking = new Booking("1", property, user, dateRange, 4);
 
-    const currentDate = new Date("2024-12-15");
+    const currentDate = new Date("2025-02-15");
     booking.cancel(currentDate);
 
     expect(booking.getStatus()).toBe("CANCELLED");
@@ -133,11 +133,11 @@ describe("Booking Entity", () => {
     const property = new Property("1", "Casa", "Descrição", 4, 300);
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
-      new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2025-02-20"),
+      new Date("2025-02-25")
     );
     const booking = new Booking("1", property, user, dateRange, 4);
-    const currentDate = new Date("2024-12-15");
+    const currentDate = new Date("2025-02-15");
     booking.cancel(currentDate);
 
     expect(() => {

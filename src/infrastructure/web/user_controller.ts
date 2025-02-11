@@ -13,7 +13,7 @@ export class UserController {
       const user = await this.userService.createUser({ name: req.body.name });
 
       return res.status(201).json({
-        message: "User created successfully",
+        message: "Usuário criado com sucesso",
         user: {
           id: user.getId(),
           name: user.getName(),

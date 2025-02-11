@@ -2,6 +2,8 @@ import express from "express";
 import request from "supertest";
 import { DataSource } from "typeorm";
 import { UserEntity } from "../persistence/entities/user_entity";
+import { BookingEntity } from "../persistence/entities/booking_entity";
+import { PropertyEntity } from "../persistence/entities/property_entity";
 import { TypeORMUserRepository } from "../repositories/typeorm_user_repository";
 import { UserService } from "../../application/services/user_service";
 import { UserController } from "./user_controller";
@@ -19,7 +21,7 @@ beforeAll(async () => {
     type: "sqlite",
     database: ":memory:",
     dropSchema: true,
-    entities: [UserEntity],
+    entities: [UserEntity, BookingEntity, PropertyEntity],
     synchronize: true,
     logging: false,
   });
@@ -55,7 +57,7 @@ describe("UserController", () => {
       });
 
     expect(response.status).toBe(201);
-    expect(response.body.message).toBe("User created successfully");
+    expect(response.body.message).toBe("Usuário criado com sucesso");
     expect(response.body.user).toHaveProperty("id");
     expect(response.body.user.name).toBe("Marcos da Conceição");
   });

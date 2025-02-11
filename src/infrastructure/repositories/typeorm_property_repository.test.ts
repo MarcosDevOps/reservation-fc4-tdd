@@ -31,8 +31,8 @@ describe("TypeORMPropertyRepository", () => {
   it("deve salvar uma propriedade com sucesso", async () => {
     const property = new Property(
       "1",
-      "Casa na Praia",
-      "Vista para o mar",
+      "Casa na Grécia",
+      "Vista para o Mediterrâneo",
       6,
       200
     );
@@ -46,8 +46,8 @@ describe("TypeORMPropertyRepository", () => {
   it("deve retornar uma propriedade com ID valido", async () => {
     const property = new Property(
       "1",
-      "Casa na Praia",
-      "Vista para o mar",
+      "Casa na Grécia",
+      "Vista para o Mediterrâneo",
       6,
       200
     );
@@ -56,7 +56,7 @@ describe("TypeORMPropertyRepository", () => {
     const savedProperty = await propertyRepository.findById("1");
     expect(savedProperty).not.toBeNull();
     expect(savedProperty?.getId()).toBe("1");
-    expect(savedProperty?.getName()).toBe("Casa na Praia");
+    expect(savedProperty?.getName()).toBe("Casa na Grécia");
   });
 
   it("deve retornar null ao buscar uma propriedade inexistente", async () => {

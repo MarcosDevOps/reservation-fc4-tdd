@@ -31,7 +31,7 @@ export class BookingController {
       const booking = await this.bookingService.createBooking(dto);
 
       return res.status(201).json({
-        message: "Booking created successfully",
+        message: "Reserva criada com sucesso",
         booking: {
           id: booking.getId(),
           propertyId: booking.getProperty().getId(),

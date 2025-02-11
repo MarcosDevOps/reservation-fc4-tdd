@@ -3,8 +3,8 @@ import { UserRepository } from "../../domain/repositories/user_repository";
 
 export class FakeUserRepository implements UserRepository {
   private users: User[] = [
-    new User("1", "John Doe"),
-    new User("2", "Jane Smith"),
+    new User("1", "Marcos da Conceição"),
+    new User("2", "João dos Santos"),
   ];
 
   async findById(id: string): Promise<User | null> {

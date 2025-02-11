@@ -54,8 +54,8 @@ describe("BookingService", () => {
     const bookingDTO: CreateBookingDTO = {
       propertyId: "1",
       guestId: "1",
-      startDate: new Date("2024-12-20"),
-      endDate: new Date("2024-12-25"),
+      startDate: new Date("2025-02-10"),
+      endDate: new Date("2025-02-15"),
       guestCount: 2,
     };
 
@@ -76,8 +76,8 @@ describe("BookingService", () => {
     const bookingDTO: CreateBookingDTO = {
       propertyId: "1",
       guestId: "1",
-      startDate: new Date("2024-12-20"),
-      endDate: new Date("2024-12-25"),
+      startDate: new Date("2025-02-10"),
+      endDate: new Date("2025-02-15"),
       guestCount: 2,
     };
 
@@ -97,8 +97,8 @@ describe("BookingService", () => {
     const bookingDTO: CreateBookingDTO = {
       propertyId: "1",
       guestId: "1",
-      startDate: new Date("2024-12-20"),
-      endDate: new Date("2024-12-25"),
+      startDate: new Date("2025-02-10"),
+      endDate: new Date("2025-02-15"),
       guestCount: 2,
     };
 
@@ -126,8 +126,8 @@ describe("BookingService", () => {
     const bookingDTO: CreateBookingDTO = {
       propertyId: "1",
       guestId: "1",
-      startDate: new Date("2024-12-20"),
-      endDate: new Date("2024-12-25"),
+      startDate: new Date("2025-02-10"),
+      endDate: new Date("2025-02-15"),
       guestCount: 2,
     };
 
@@ -164,8 +164,8 @@ describe("BookingService", () => {
     const bookingDTO: CreateBookingDTO = {
       propertyId: "1",
       guestId: "1",
-      startDate: new Date("2024-12-20"),
-      endDate: new Date("2024-12-25"),
+      startDate: new Date("2025-02-10"),
+      endDate: new Date("2025-02-15"),
       guestCount: 2,
     };
 
