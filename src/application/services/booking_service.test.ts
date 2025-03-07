@@ -190,6 +190,7 @@ describe("BookingService", () => {
 
     await expect(bookingService.cancelBooking(bookingId)).rejects.toThrow(
       "Reserva não encontrada."
+      
     );
   });
 });
